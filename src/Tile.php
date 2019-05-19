@@ -32,4 +32,9 @@ class Tile
         $this->leftEnd = $this->rightEnd;
         $this->rightEnd = $leftEnd;
     }
+
+    public function __toString(): string
+    {
+        return sprintf('<%d,%d>', $this->leftEnd, $this->rightEnd);
+    }
 }

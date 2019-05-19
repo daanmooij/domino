@@ -18,6 +18,16 @@ class Board
         return $this->tiles;
     }
 
+    public function getLeftTile(): Tile
+    {
+        return $this->tiles[0];
+    }
+
+    public function getRightTile(): Tile
+    {
+        return $this->tiles[count($this->tiles) - 1];
+    }
+
     public function addToLeft(Tile $newTile): void
     {
         $leftTile = $this->tiles[0];
@@ -38,5 +48,10 @@ class Board
         }
 
         $this->tiles[] = $newTile;
+    }
+
+    public function __toString(): string
+    {
+        return implode(':', $this->tiles);
     }
 }

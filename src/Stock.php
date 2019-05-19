@@ -21,20 +21,32 @@ class Stock
     }
 
     /**
+     * @throws DominoException When the stock doesn't have enough tiles.
+     */
+    public function draw(int $number): array
+    {
+        $tiles = [];
+        for ($i = 0; $i < $number; $i++) {
+            $tiles[] = $this->drawOne();
+        }
+        return $tiles;
+    }
+
+    public function hasTile(): bool
+    {
+        return !empty($this->tiles);
+    }
+
+    /**
      * @throws DominoException When the stock is empty.
      */
-    public function pop(): Tile
+    public function drawOne(): Tile
     {
         if (empty($this->tiles)) {
             throw new DominoException();
         }
 
         return array_pop($this->tiles);
-    }
-
-    public function hasTile(): bool
-    {
-        return !empty($this->tiles);
     }
 
     /**

@@ -17,33 +17,29 @@ class StockTest extends TestCase
     }
 
     /** @test */
-    public function pop_one(): void
+    public function draw_one(): void
     {
-        $tile = $this->stock->pop();
+        $tile = $this->stock->drawOne();
 
         $this->assertInstanceOf(Tile::class, $tile);
     }
 
     /** @test */
-    public function pop_all(): void
+    public function draw_all(): void
     {
         $this->assertTrue($this->stock->hasTile());
 
-        for ($i = 0; $i < self::NUMBER_OF_TILES; $i++) {
-            $this->stock->pop();
-        }
+        $this->stock->draw(self::NUMBER_OF_TILES);
 
         $this->assertFalse($this->stock->hasTile());
     }
 
     /** @test */
-    public function pop_exception(): void
+    public function draw_exception(): void
     {
         $this->expectException(DominoException::class);
 
-        for ($i = 0; $i <= self::NUMBER_OF_TILES; $i++) {
-            $this->stock->pop();
-        }
+        $this->stock->draw(self::NUMBER_OF_TILES + 1);
     }
 
     /** @test */
