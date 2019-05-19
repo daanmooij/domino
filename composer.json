@@ -1,4 +1,14 @@
 {
+    "name": "daanmooij/domino",
+    "description": "Library to play domino",
+    "license": "MIT",
+    "version":  "1.0",
+    "authors": [
+        {
+            "name": "Daan Mooij",
+            "email": "daanmooij@gmail.com"
+        }
+    ],
     "require": {
         "php": "^7.2"
     },
