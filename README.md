@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/daanmooij/domino.svg?branch=master)](https://travis-ci.org/daanmooij/domino)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/daanmooij/domino/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/daanmooij/domino/?branch=master)
 
 # Domino
 Library to play domino
