@@ -25,3 +25,7 @@ To either run only the unit or integration tests, run:
 make unit-test
 make integration-test
 ```
+
+## License
+
+[MIT](LICENSE)
