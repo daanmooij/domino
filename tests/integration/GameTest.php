@@ -15,7 +15,7 @@ class GameTest extends TestCase
         $game = new Game(self::PLAYER_ONE, self::PLAYER_TWO);
         $game->play();
 
-        // If it reaches here, it means that the game ran without exceptions.
+        // If it reaches this point, it means that the game ran without exceptions.
         $this->assertTrue(true);
     }
 }

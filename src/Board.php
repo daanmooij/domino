@@ -52,6 +52,6 @@ class Board
 
     public function __toString(): string
     {
-        return implode(':', $this->tiles);
+        return implode(' ', $this->tiles);
     }
 }

@@ -35,6 +35,6 @@ class Tile
 
     public function __toString(): string
     {
-        return sprintf('<%d,%d>', $this->leftEnd, $this->rightEnd);
+        return sprintf('<%d:%d>', $this->leftEnd, $this->rightEnd);
     }
 }
