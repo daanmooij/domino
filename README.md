@@ -15,19 +15,19 @@ Library to play domino
 
 ## Installation
 
-```bash
+```
 make install
 ```
 
 ## Testing
 
 To run all the tests, run:
-```bash
+```
 make test
 ```
 
 To either run only the unit or integration tests, run:
-```bash
+```
 make unit
 make integration
 ```
@@ -35,12 +35,12 @@ make integration
 ## Example
 
 To run an example:
-```bash
+```
 make example
 ```
 
 A game could look like this:
-```bash
+```
 
 -------------------------------------------------------
 Game starting with tile: <1:4>
