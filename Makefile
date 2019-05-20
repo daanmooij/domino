@@ -1,5 +1,7 @@
+install: ; composer install -o
+
 test: ; ./vendor/bin/phpunit
 
-unit-test: ; ./vendor/bin/phpunit --testsuite Unit
+unit: ; ./vendor/bin/phpunit --testsuite Unit
 
-integration-test: ; ./vendor/bin/phpunit --testsuite Integration
+integration: ; ./vendor/bin/phpunit --testsuite Integration
