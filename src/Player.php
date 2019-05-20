@@ -22,6 +22,12 @@ class Player
         return $this->name;
     }
 
+    /** @return Tile[] */
+    public function getTiles(): array
+    {
+        return $this->tiles;
+    }
+
     public function drawStartingTiles(Stock $stock): void
     {
         $this->tiles = $stock->draw(self::NUMBER_OF_STARTING_TILES);
