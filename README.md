@@ -2,16 +2,20 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/daanmooij/domino/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/daanmooij/domino/?branch=master)
 
 # Domino
-Library to play domino
+Library to play domino.
 
-## Entities
-- Board
-- DominoException
-- Game
-- Logger
-- Player
-- Stock
-- Tile
+Dominoes is a family of games played with rectangular tiles.
+Each tile is divided into two square ends.
+Each end is marked with a number (one to six) of spots or is a blank.
+There are 28 tiles, one for each combination of spots and blanks.
+
+**Rules of the game:**
+- The 28 tiles are shuffled face down and form the stock. Each player draws seven tiles.
+- Pick a random tile to start the line of play.
+- The players alternately extend the line of play with one tile at one of its two ends;
+- A tile may only be placed next to another tile, if their respective values on the connecting ends are identical.
+- If a player is unable to place a valid tile, they must keep on pulling tiles from the stock until they can.
+- The game ends when one player wins by playing their last tile or when the stock is empty.
 
 ## Installation
 
