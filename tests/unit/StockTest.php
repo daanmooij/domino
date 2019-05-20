@@ -17,7 +17,7 @@ class StockTest extends TestCase
     }
 
     /** @test */
-    public function draw_one(): void
+    public function drawOne(): void
     {
         $tile = $this->stock->drawOne();
 
@@ -25,7 +25,7 @@ class StockTest extends TestCase
     }
 
     /** @test */
-    public function draw_all(): void
+    public function drawAll(): void
     {
         $this->assertTrue($this->stock->hasTile());
 
@@ -35,7 +35,7 @@ class StockTest extends TestCase
     }
 
     /** @test */
-    public function draw_exception(): void
+    public function drawException(): void
     {
         $this->expectException(DominoException::class);
 
