@@ -4,42 +4,64 @@ namespace DaanMooij\Domino;
 
 class Player
 {
-    const NUMBER_OF_STARTING_TILES = 7;
+    private const NUMBER_OF_STARTING_TILES = 7;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $name;
 
-    /** @var Tile[] */
+    /**
+     * @var array<Tile>
+     */
     private $tiles;
 
+    /**
+     * @param string $name
+     */
     public function __construct(string $name)
     {
         $this->name = $name;
     }
 
+    /**
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /** @return Tile[] */
+    /**
+     * @return array<Tile>
+     */
     public function getTiles(): array
     {
         return $this->tiles;
     }
 
+    /**
+     * @param Stock $stock
+     * @return void
+     */
     public function drawStartingTiles(Stock $stock): void
     {
         $this->tiles = $stock->draw(self::NUMBER_OF_STARTING_TILES);
     }
 
+    /**
+     * @return bool
+     */
     public function hasTile(): bool
     {
         return !empty($this->tiles);
     }
 
     /**
+     * @param Board $board
+     * @param Stock $stock
      * @throws DominoException When the stock is empty when the player needs to draw one.
+     * @return void
      */
     public function play(Board $board, Stock $stock): void
     {
@@ -79,16 +101,28 @@ class Player
         $this->play($board, $stock);
     }
 
+    /**
+     * @return Tile
+     */
     private function getLastTile(): Tile
     {
         return $this->tiles[count($this->tiles) - 1];
     }
 
+    /**
+     * @param Tile $tile
+     * @param Tile $boardTile
+     * @return void
+     */
     private function logMove(Tile $tile, Tile $boardTile): void
     {
         Logger::log(sprintf('%s plays %s to connect to tile %s on the board', $this->name, $tile, $boardTile));
     }
 
+    /**
+     * @param int $key
+     * @return void
+     */
     private function removeTile(int $key): void
     {
         array_splice($this->tiles, $key, 1);

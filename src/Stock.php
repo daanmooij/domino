@@ -7,7 +7,9 @@ class Stock
     private const STARTING_END = 0;
     private const ENDING_END = 6;
 
-    /** @var Tile[] */
+    /**
+     * @var array<Tile>
+     */
     private $tiles;
 
     public function __construct()
@@ -15,13 +17,18 @@ class Stock
         $this->initializeTiles();
     }
 
+    /**
+     * @return void
+     */
     public function shuffle(): void
     {
         shuffle($this->tiles);
     }
 
     /**
+     * @param int $number
      * @throws DominoException When the stock doesn't have enough tiles.
+     * @return array<Tile>
      */
     public function draw(int $number): array
     {
@@ -32,6 +39,9 @@ class Stock
         return $tiles;
     }
 
+    /**
+     * @return bool
+     */
     public function hasTile(): bool
     {
         return !empty($this->tiles);
@@ -39,6 +49,7 @@ class Stock
 
     /**
      * @throws DominoException When the stock is empty.
+     * @return Tile
      */
     public function drawOne(): Tile
     {
@@ -51,6 +62,7 @@ class Stock
 
     /**
      * Generates a collection of all possible tiles without duplicates.
+     * @return void
      */
     private function initializeTiles(): void
     {

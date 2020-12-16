@@ -4,30 +4,46 @@ namespace DaanMooij\Domino;
 
 class Board
 {
-    /** @var Tile[] */
+    /**
+     * @var array<Tile>
+     */
     private $tiles;
 
+    /**
+     * @var Tile $baseTile
+     */
     public function __construct(Tile $baseTile)
     {
         $this->tiles[] = $baseTile;
     }
 
-    /** @return Tile[] */
+    /**
+     * @return Tile[]
+     */
     public function getTiles(): array
     {
         return $this->tiles;
     }
 
+    /**
+     * @return Tile
+     */
     public function getLeftTile(): Tile
     {
         return $this->tiles[0];
     }
 
+    /**
+     * @return Tile
+     */
     public function getRightTile(): Tile
     {
         return $this->tiles[count($this->tiles) - 1];
     }
 
+    /**
+     * @return void
+     */
     public function addToLeft(Tile $newTile): void
     {
         $leftTile = $this->tiles[0];
@@ -39,6 +55,9 @@ class Board
         array_unshift($this->tiles, $newTile);
     }
 
+    /**
+     * @return void
+     */
     public function addToRight(Tile $newTile): void
     {
         $rightTile = $this->tiles[count($this->tiles) - 1];
@@ -50,6 +69,9 @@ class Board
         $this->tiles[] = $newTile;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return implode(' ', $this->tiles);

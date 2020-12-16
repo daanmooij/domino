@@ -4,25 +4,37 @@ namespace DaanMooij\Domino;
 
 class Game
 {
-    /** @var Player */
+    /**
+     * @var Player
+     */
     private $playerOne;
 
-    /** @var Player */
+    /**
+     * @var Player
+     */
     private $playerTwo;
 
-    /** @var Stock */
+    /**
+     * @var Stock
+     */
     private $stock;
 
-    /** @var Board */
+    /**
+     * @var Board
+     */
     private $board;
 
-    public function __construct(string $playerOne, string $playerTwo)
+    /**
+     * @param string $nameOne
+     * @param string $nameTwo
+     */
+    public function __construct(string $nameOne, string $nameTwo)
     {
         $this->stock = new Stock();
         $this->stock->shuffle();
 
-        $this->playerOne = new Player($playerOne);
-        $this->playerTwo = new Player($playerTwo);
+        $this->playerOne = new Player($nameOne);
+        $this->playerTwo = new Player($nameTwo);
 
         $this->playerOne->drawStartingTiles($this->stock);
         $this->playerTwo->drawStartingTiles($this->stock);
@@ -31,6 +43,9 @@ class Game
         $this->board = new Board($baseTile);
     }
 
+    /**
+     * @return void
+     */
     public function play(): void
     {
         Logger::start();
