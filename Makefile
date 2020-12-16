@@ -1,9 +1,7 @@
 install: ; composer install -o
 
-test: ; ./vendor/bin/phpunit
+phpunit: ; ./vendor/bin/phpunit
 
-unit: ; ./vendor/bin/phpunit --testsuite Unit
-
-integration: ; ./vendor/bin/phpunit --testsuite Integration
+phpstan: ; ./vendor/bin/phpstan analyse --level 8 src
 
 example: ; php examples/example.php
